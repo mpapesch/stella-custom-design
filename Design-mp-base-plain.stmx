@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee"/>
+		<name>Design-mp-base-plain</name>
+		<uuid>c7294029-e1cd-41e8-a69e-5ae96de705c6</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="3.7.2" isee:build_number="3414" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:sim_duration="2" isee:run_prefix="Run" isee:simulation_delay="0.0555556" isee:restore_on_start="false" method="RK4" time_units="Monate" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:strict_units="false" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
+		<start>0</start>
+		<stop>36</stop>
+		<dt reciprocal="true">16</dt>
+	</sim_specs>
+	<isee:prefs live_at_start="true" saved_runs="5" keep="false" show_module_prefix="false" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Design-mp-base-plain" isee:design_custom="true" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" rifp="true"/>
+	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
+	<isee:time_formats default_format="Builtin">
+		<isee:time_format name="Builtin" type="adaptive"/>
+	</isee:time_formats>
+	<isee:number_format_extenders/>
+	<default_format/>
+	<model_units>
+		<unit name="kilowatt hours per day">
+			<eqn>kWh/day</eqn>
+		</unit>
+		<unit name="kilowatts">
+			<eqn>kW</eqn>
+			<alias>kilowatt</alias>
+		</unit>
+		<unit name="pro Monat">
+			<eqn>1/Monat</eqn>
+		</unit>
+		<unit name="Personen">
+			<eqn>person</eqn>
+		</unit>
+		<unit name="Personentag">
+			<eqn>person*tag</eqn>
+			<alias>Personentage</alias>
+			<alias>PT</alias>
+		</unit>
+		<unit name="Lösungsteam">
+			<eqn/>
+			<alias>Lösungsteams</alias>
+			<alias>Projekt</alias>
+			<alias>Projekte</alias>
+		</unit>
+		<unit name="Idee">
+			<eqn/>
+			<alias>Ideen</alias>
+			<alias>Projektidee</alias>
+			<alias>Projektideen</alias>
+		</unit>
+		<unit name="Erfolgserlebnis">
+			<eqn/>
+			<alias>Erfolgserlebnisse</alias>
+		</unit>
+		<unit name="Taucher">
+			<eqn>People</eqn>
+		</unit>
+		<unit name="Tauchgang">
+			<eqn/>
+			<alias>Tauchgänge</alias>
+			<alias>Theorieeinheit</alias>
+			<alias>Theorieeinheiten</alias>
+		</unit>
+		<unit name="Dimensionless">
+			<eqn>1</eqn>
+			<alias>dmnl</alias>
+			<alias>unitless</alias>
+			<alias>Prozent</alias>
+		</unit>
+	</model_units>
+	<model>
+		<variables/>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_family="CMU Concrete" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_family="CMU Concrete" font_size="12pt"/>
+				<numeric_display color="white" background="white" font_family="CMU Concrete" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_family="CMU Concrete" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="CMU Concrete" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="CMU Concrete" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_family="CMU Concrete" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="CMU Concrete" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_family="CMU Concrete" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_family="CMU Concrete" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF" popup_font_family="CMU Concrete"/>
+				<slider color="#66CC66" background="#E0E0E0" font_family="CMU Concrete" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white" font_family="CMU Concrete"/>
+				<isee:time_slider color="#E95F74" background="silver" font_family="CMU Concrete"/>
+				<isee:pie_input color="black" background="white" font_family="CMU Concrete" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_family="CMU Concrete" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_family="CMU Concrete" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<isee:dropdown_input color="black" background="white" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_family="CMU Concrete" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" font_family="CMU Concrete" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_family="CMU Concrete" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_family="CMU Concrete" font_size="12pt" header_font_family="CMU Concrete"/>
+				<lamp color="black" background="white" font_family="CMU Concrete" font_size="9pt"/>
+				<gauge color="black" background="white" font_family="CMU Concrete" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_family="CMU Concrete" font_size="12pt" header_font_family="CMU Concrete" header_font_size="10pt"/>
+				<isee:animation_object color="black" background="white" font_family="CMU Concrete" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_family="CMU Concrete" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_family="CMU Concrete" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_family="CMU Concrete" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_family="CMU Concrete" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="CMU Concrete" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="818" page_height="571" isee:page_cols="5" isee:page_rows="5" isee:scroll_x="740" isee:scroll_y="367.5" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_family="CMU Concrete" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_family="CMU Concrete" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_family="CMU Concrete" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_family="CMU Concrete" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_family="CMU Concrete" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_family="CMU Concrete" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_family="CMU Concrete" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_family="CMU Concrete" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_family="CMU Concrete" font_size="12pt"/>
+					<numeric_display color="white" background="white" font_family="CMU Concrete" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_family="CMU Concrete" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="CMU Concrete" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="CMU Concrete" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_family="CMU Concrete" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="CMU Concrete" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<stacked_container uid="116" x="740.087" y="2361.18" width="280" height="213.822">
+					<graph width="280" height="213.822" type="time_series" isee:points_only="true" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="true" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="7" num_y_grid_lines="5" num_x_labels="7" num_y_labels="5" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
+				</stacked_container>
+				<text_box uid="135" x="1620.76" y="2352.7" width="210.856" height="64.374">weitere Erfolgserlebnissse: Preises, Würdigung, Zeitungsartikel, gemeinsames Arbeiten, vergebene Preise</text_box>
+				<stacked_container uid="136" x="1245.2" y="2488.19">
+					<graph width="350" height="250" type="time_series" isee:points_only="true" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="true" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="7" num_y_grid_lines="5" num_x_labels="7" num_y_labels="5" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
+				</stacked_container>
+				<text_box uid="366" x="1857.09" y="2355.89" width="260" height="58">Erfolgserlebnisse pro Projekt/Aufwand
+Misserfolge pro Projekt/Aufwand
+--&gt; Regler 
+(bzw. in Abhängigkeit von der Betreuung)</text_box>
+			</view>
+			<view isee:template_view="template:5" isee:name="Home page" isee:original_design="Deluxe Prev-Next Blue Green Pastel" background="white" page_width="1920" page_height="1080" zoom="120" isee:thumbnail="r../Design-mp-base-plain_thumbnails/interface_pg1.png" home_view="true" type="interface">
+				<style>
+					<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				</style>
+				<text_box z_index="-5" font_color="#353535" font_size="18pt" padding="6" vertical_scrollbar="true" appearance="transparent" x="95" y="269" width="545" height="692">Description</text_box>
+				<text_box z_index="7" font_size="72pt" padding="0" appearance="transparent" x="95" y="30" width="1635" height="85">Title</text_box>
+				<text_box z_index="7" font_size="36pt" padding="0" appearance="transparent" x="95" y="115" width="1635" height="74">Subtitle</text_box>
+				<text_box text_align="center" vertical_text_align="center" font_color="#333393" font_size="24pt" appearance="transparent" x="95" y="189" width="545" height="80">Caption</text_box>
+				<isee:shape x="640" y="269" width="1090" height="692" kind="rectangle"/>
+			</view>
+			<view isee:template_view="template:6" isee:name="Dashboard" isee:original_design="Deluxe Prev-Next Blue Green Pastel" background="white" page_width="1920" page_height="1080" zoom="120" isee:thumbnail="r../Design-mp-base-plain_thumbnails/interface_pg2.png" type="interface">
+				<style>
+					<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				</style>
+				<stacked_container x="640" y="269" width="1090" height="692" z_index="10" isee:appearance="tabs">
+					<graph width="1090" height="692" type="time_series" isee:points_only="true" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="7" num_y_grid_lines="5" num_x_labels="7" num_y_labels="5" title="Tab 1" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true"/>
+				</stacked_container>
+				<slider z_index="10" color="#333393" font_size="14pt" num_ticks="6" label_side="left" isee:fancy_appearance="true" input_expands="false" input_width="300" x="95.6039" y="628.2" width="545" height="77" isee:navigate_to="false" show_name="true">
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<slider z_index="10" color="#333393" font_size="14pt" num_ticks="6" label_side="left" isee:fancy_appearance="true" input_expands="false" input_width="300" x="95.6039" y="551.2" width="545" height="77" increment="0.5" min="0" max="5" isee:navigate_to="false" show_name="true">
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<slider z_index="10" color="#333393" font_size="14pt" num_ticks="5" label_side="left" isee:fancy_appearance="true" input_expands="false" input_width="300" x="95" y="471" width="545" height="77" increment="5000" isee:navigate_to="false" show_name="true">
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<slider z_index="10" color="#333393" font_size="14pt" num_ticks="6" label_side="left" isee:fancy_appearance="true" input_expands="false" input_width="300" x="95" y="705.2" width="545" height="77" increment="0.05" min="0" max="0.5" isee:navigate_to="false" show_name="true">
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<gauge z_index="10" num_major_ticks="5" num_minor_ticks="5" x="162" y="269" width="140" height="150" isee:immediately_update_on_user_input="true" min="0" max="200000" title="Title">
+					<zones>
+						<zone type="normal" color="#FF2600" max="25000"/>
+						<zone type="caution" color="yellow" min="25000" max="72000"/>
+						<zone type="panic" color="#00F900" min="72000"/>
+					</zones>
+				</gauge>
+				<slider z_index="10" color="#333393" font_size="14pt" num_ticks="7" label_side="left" isee:fancy_appearance="true" input_expands="false" input_width="300" x="95.6039" y="782.2" width="545" height="77" increment="0.05" isee:navigate_to="false" show_name="true">
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<gauge z_index="10" appearance="radial" num_major_ticks="6" num_minor_ticks="6" show_numeric_value="true" x="430.4" y="269" width="140" height="150" isee:immediately_update_on_user_input="true" min="0" max="5" title="Title">
+					<zones>
+						<zone type="normal" color="#FF2600" max="1"/>
+						<zone type="caution" color="yellow" min="1" max="2"/>
+						<zone type="panic" color="#00F900" min="2"/>
+					</zones>
+				</gauge>
+				<text_box font_size="72pt" x="95" y="30" width="1635" height="85">Titel</text_box>
+				<text_box font_size="48pt" x="95" y="115" width="1635" height="74">Untertitel</text_box>
+				<knob z_index="13" color="#333393" x="344.833" y="880.5" width="75" height="50" increment="1" min="1" max="30" isee:navigate_to="false" show_name="false">
+					<reset_to after="never">0</reset_to>
+				</knob>
+			</view>
+			<view isee:template_view="template:4" isee:name="Konfiguration" background="white" page_width="1920" page_height="1080" zoom="120" isee:thumbnail="r../Design-mp-base-plain_thumbnails/interface_pg3.png" type="interface">
+				<style>
+					<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				</style>
+				<text_box font_size="72pt" x="95" y="30" width="1635" height="85" isee:locked="true">Titel</text_box>
+				<text_box font_size="48pt" x="95" y="115" width="1635" height="74" isee:locked="true">Untertitel</text_box>
+				<text_box z_index="6" background="white" font_weight="bold" text_align="center" vertical_text_align="center" font_color="#333393" font_size="36pt" x="95" y="189" width="545" height="80" isee:locked="true">Bereich</text_box>
+				<text_box z_index="6" background="white" font_weight="bold" text_align="center" vertical_text_align="center" font_color="#333393" font_size="36pt" x="640" y="189" width="545" height="80" isee:locked="true">Bereich</text_box>
+				<text_box z_index="6" background="white" font_weight="bold" text_align="center" vertical_text_align="center" font_color="#333393" font_size="36pt" x="1185" y="189" width="545" height="80" isee:locked="true">Bereich</text_box>
+				<isee:shape z_index="9" border_color="#333393" border_width="thick" border_style="none" transparent_background="false" x="95" y="269" width="545" height="692" isee:locked="true" kind="rectangle"/>
+				<isee:shape z_index="9" border_color="#333393" border_width="thick" border_style="none" transparent_background="false" x="640" y="269" width="545" height="692" isee:locked="true" kind="rectangle"/>
+				<isee:shape z_index="9" border_color="#333393" border_width="thick" border_style="none" transparent_background="false" x="1185" y="269" width="545" height="692" isee:locked="true" kind="rectangle"/>
+			</view>
+			<isee:templates>
+				<view isee:name="Grid - Empty" background="white" page_width="1920" page_height="1080" zoom="120" isee:thumbnail="r../Design-mp-base-plain_thumbnails/template_pg1.png" type="template">
+					<style>
+						<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+					</style>
+					<isee:shape border_color="#A9A9A9" border_width="0.1" x="95" y="115" width="1635" height="920" isee:locked="true" kind="rectangle"/>
+					<isee:shape x="640" y="115" width="545" height="920" isee:locked="true" kind="rectangle"/>
+					<isee:shape x="95" y="422" width="1635" height="307" isee:locked="true" kind="rectangle"/>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="95" y="30" width="1635" height="85" isee:locked="true">Title 72pt; X: 95 ; Y 30 ; W 1635 ; H 85</text_box>
+					<isee:shape x="95" y="269" width="1635" height="614" isee:locked="true" kind="rectangle"/>
+					<isee:shape x="368" y="115" width="1090" height="920" isee:locked="true" kind="rectangle"/>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="95" y="115" width="1635" height="74">Subtitle 48pt; X: 95 ; Y 115 ; W 1635 ; H 74</text_box>
+				</view>
+				<view isee:template_view="template:1" isee:name="Grid - Dashboard" background="white" page_width="1920" page_height="1080" zoom="180" isee:thumbnail="r../Design-mp-base-plain_thumbnails/template_pg2.png" type="template">
+					<style>
+						<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+					</style>
+					<isee:shape border_color="#A9A9A9" border_width="0.1" x="95" y="115" width="1635" height="920" isee:locked="true" kind="rectangle"/>
+					<isee:shape x="640" y="115" width="545" height="920" isee:locked="true" kind="rectangle"/>
+					<isee:shape x="95" y="422" width="1635" height="307" isee:locked="true" kind="rectangle"/>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="95" y="30" width="1635" height="85" isee:locked="true">Title 72pt; X: 95 ; Y 30 ; W 1635 ; H 85</text_box>
+					<isee:shape x="95" y="269" width="1635" height="614" isee:locked="true" kind="rectangle"/>
+					<isee:shape x="368" y="115" width="1090" height="920" isee:locked="true" kind="rectangle"/>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="95" y="115" width="1635" height="74">Subtitle 48pt; X: 95 ; Y 115 ; W 1635 ; H 74</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="95" y="269" width="545" height="692">Controls ; X: 95 ; Y 269 ; W 545 ; H 692</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="95" y="961" width="1635" height="74">Controls 48pt; X: 95 ; Y 961 ; W 1635 ; H 74</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="640" y="269" width="1090" height="692">Graphs ; X: 640 ; Y 269 ; W 1090 ; H 692</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" text_align="center" vertical_text_align="center" padding="0" border_width="thin" border_style="solid" x="95" y="189" width="545" height="80">Caption 36pt; X: 95 ; Y 189 ; W 545 ; H 80</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" text_align="center" vertical_text_align="center" padding="0" border_width="thin" border_style="solid" x="640" y="189" width="1090" height="80">Caption 36pt; X: 640 ; Y 189 ; W 545 ; H 80</text_box>
+				</view>
+				<view isee:template_view="template:1" isee:name="Grid - Parameter" background="white" page_width="1920" page_height="1080" zoom="160" isee:thumbnail="r../Design-mp-base-plain_thumbnails/template_pg3.png" type="template">
+					<style>
+						<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+					</style>
+					<isee:shape border_color="#A9A9A9" border_width="0.1" x="95" y="115" width="1635" height="920" isee:locked="true" kind="rectangle"/>
+					<isee:shape x="640" y="115" width="545" height="920" isee:locked="true" kind="rectangle"/>
+					<isee:shape x="95" y="422" width="1635" height="307" isee:locked="true" kind="rectangle"/>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="95" y="30" width="1635" height="85" isee:locked="true">Title 72pt; X: 95 ; Y 30 ; W 1635 ; H 85</text_box>
+					<isee:shape x="95" y="269" width="1635" height="614" isee:locked="true" kind="rectangle"/>
+					<isee:shape x="368" y="115" width="1090" height="920" isee:locked="true" kind="rectangle"/>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="95" y="115" width="1635" height="74">Subtitle 48pt; X: 95 ; Y 115 ; W 1635 ; H 74</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="95" y="269" width="545" height="692">Controls ; X: 95 ; Y 269 ; W 545 ; H 692</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="95" y="961" width="1635" height="74">Controls 48pt; X: 95 ; Y 961 ; W 1635 ; H 74</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="1185" y="269" width="545" height="692">Graphs ; X: 1185 ; Y 269 ; W 545 ; H 692</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" text_align="center" vertical_text_align="center" padding="0" border_width="thin" border_style="solid" x="95" y="189" width="545" height="80">Caption 36pt; X: 95 ; Y 189 ; W 545 ; H 80</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" text_align="center" vertical_text_align="center" padding="0" border_width="thin" border_style="solid" x="640" y="189" width="545" height="80">Caption 36pt; X: 640 ; Y 189 ; W 545 ; H 80</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" padding="0" border_width="thin" border_style="solid" x="640" y="269" width="545" height="692">Graphs ; X: 640 ; Y 269 ; W 545 ; H 692</text_box>
+					<text_box background="#D6D6D6" font_weight="bold" text_align="center" vertical_text_align="center" padding="0" border_width="thin" border_style="solid" x="1185" y="189" width="545" height="80">Caption 36pt; X: 1185 ; Y 189 ; W 545 ; H 80</text_box>
+				</view>
+				<view isee:name="Base Template (v1.0)" isee:original_design="Custom Design - Design-mp-base-plain" background="white" page_width="1920" page_height="1080" isee:scroll_x="94.1667" zoom="120" isee:thumbnail="r../Design-mp-base-plain_thumbnails/template_pg4.png" type="template">
+					<style>
+						<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+					</style>
+					<graphics_frame z_index="2" fill="none" x="1808" y="15" width="113" height="79" isee:locked="true">
+						<image width="106" height="73" size_to_parent="false" isee:transparency="0" isee:fixed_aspect_ratio="true">r../Design-mp-base-plain_Graphics/-1564583913.png</image>
+					</graphics_frame>
+					<isee:shape background="#666666" transparent_background="false" x="0" y="1035" width="1920" height="45" isee:locked="true" kind="rectangle"/>
+					<graphics_frame fill="none" x="15" y="1042" width="88" height="31" isee:locked="true">
+						<image width="403" height="141" size_to_parent="true" isee:transparency="0" isee:fixed_aspect_ratio="true">r../Design-mp-base-plain_Graphics/-2090358873.png</image>
+					</graphics_frame>
+					<text_box z_index="3" vertical_text_align="center" font_color="#CCCCCC" font_size="14pt" border_width="0" appearance="transparent" x="120" y="1038" width="828" height="42">This work © 2024 by Matthias Papesch
+is licensed under CC BY 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/</text_box>
+					<isee:shape z_index="-4" background="#F7F7F7" border_width="thin" border_style="none" transparent_background="true" x="0" y="0" width="1920" height="1080" isee:locked="true" kind="rectangle"/>
+					<button background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="12" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="Interface" isee:tooltip="Springe zur interaktiven Steuerung." x="1750" y="856" width="150" height="35">
+						<actions>
+							<action target="interface:1">navigate</action>
+						</actions>
+					</button>
+					<button background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="12" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="Modell" isee:tooltip="Springe zur Erklärung des Modells." x="1750" y="891" width="150" height="35">
+						<actions>
+							<action target="story" view="0" story="198">navigate</action>
+						</actions>
+					</button>
+					<button background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="10" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="Startseite" isee:tooltip="Springe zur Einstiegsseite." x="1750" y="821" width="150" height="35">
+						<actions>
+							<action target="home_page">navigate</action>
+						</actions>
+					</button>
+					<graphics_frame fill="none" x="1750" y="926" width="50" height="50">
+						<image width="50" height="50" size_to_parent="false" isee:transparency="0" isee:fixed_aspect_ratio="true">r../Design-mp-base-plain_Graphics/-253712457.png</image>
+					</graphics_frame>
+					<graphics_frame fill="none" x="1850" y="926" width="50" height="50">
+						<image width="50" height="50" size_to_parent="false" isee:transparency="0" isee:fixed_aspect_ratio="true">r../Design-mp-base-plain_Graphics/233677949.png</image>
+					</graphics_frame>
+				</view>
+				<view isee:template_view="template:4" isee:name="Homepage Template (v1.0)" isee:original_design="Deluxe Prev-Next Blue Green Pastel" background="white" page_width="1920" page_height="1080" zoom="120" isee:thumbnail="r../Design-mp-base-plain_thumbnails/template_pg5.png" type="template">
+					<style>
+						<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+					</style>
+				</view>
+				<view isee:template_view="template:4" isee:name="Dashboard Template (v1.0)" isee:original_design="Custom Design - Design-mp-base-plain" background="white" page_width="1920" page_height="1080" isee:scroll_x="94.1667" zoom="120" isee:thumbnail="r../Design-mp-base-plain_thumbnails/template_pg6.png" type="template">
+					<style>
+						<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+					</style>
+					<text_box z_index="6" background="white" font_weight="bold" text_align="center" vertical_text_align="center" font_color="#333393" font_size="36pt" x="95.6039" y="189" width="544.396" height="80" isee:locked="true">Werte für Parameter</text_box>
+					<text_box z_index="4" background="white" font_weight="bold" text_align="center" vertical_text_align="center" font_color="#333393" font_size="36pt" x="640" y="189" width="1090" height="80" isee:locked="true">Entwicklung im Zeitverlauf</text_box>
+					<button z_index="11" background="#333393" font_weight="bold" font_color="#D9D9D9" font_family="Arial Rounded MT Bold" font_size="48pt" border_color="white" border_width="thick" transparent="true" corner_radius="8" isee:flat="false" isee:native_tooltip="false" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="" isee:tooltip="Simulation Starten" x="640" y="973" width="50" height="50">
+						<actions>
+							<action>start_then_live</action>
+						</actions>
+						<image width="50" height="50" size_to_parent="false">r../Design-mp-base-plain_Graphics/922055231.png</image>
+					</button>
+					<button z_index="6" background="#333393" font_weight="bold" font_color="#D9D9D9" font_family="Arial Rounded MT Bold" font_size="48pt" border_color="white" border_width="thick" transparent="true" corner_radius="8" isee:flat="false" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="" isee:tooltip="Simulation Pausieren bzw. Fortsezten" x="690" y="973" width="50" height="50">
+						<actions>
+							<action>pause</action>
+						</actions>
+						<image width="50" height="50" size_to_parent="false">r../Design-mp-base-plain_Graphics/1713755512.png</image>
+					</button>
+					<button z_index="6" background="#333393" font_weight="bold" font_color="#D9D9D9" font_family="Arial Rounded MT Bold" font_size="48pt" border_color="white" border_width="thick" transparent="true" corner_radius="8" isee:flat="false" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="" isee:tooltip="Simulation auf den Ausgangszustand zurücksetzen" x="1680" y="973" width="50" height="50">
+						<actions>
+							<action>restore_all</action>
+						</actions>
+						<image width="50" height="50" size_to_parent="false">r../Design-mp-base-plain_Graphics/1055589027.png</image>
+					</button>
+					<isee:time_slider z_index="5" color="#333393" interactive="true" appearance="progress" x="790" y="961" width="840" height="74"/>
+					<isee:shape z_index="9" border_color="#333393" border_width="thick" border_style="none" transparent_background="false" x="95" y="269" width="545" height="692" isee:locked="true" kind="rectangle"/>
+					<isee:shape z_index="10" border_color="#333393" border_width="thick" border_style="none" transparent_background="false" x="640" y="269" width="1090" height="692" isee:locked="true" kind="rectangle"/>
+				</view>
+				<view isee:template_view="template:4" isee:name="Story Template (v1.0)" background="white" page_width="1920" page_height="1080" zoom="120" isee:thumbnail="r../Design-mp-base-plain_thumbnails/template_pg7.png" type="template">
+					<style>
+						<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+					</style>
+					<isee:shape border_width="thin" border_style="none" transparent_background="false" x="95" y="115" width="1635" height="920" kind="rectangle"/>
+					<button z_index="4" background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="10" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="Übersicht" isee:tooltip="Springe zur Übersicht über die Module." x="95" y="1000" width="150" height="35">
+						<actions>
+							<action target="none">navigate</action>
+						</actions>
+					</button>
+					<button z_index="4" background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="10" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="Budget" isee:tooltip="Springe zum Modul Budget." x="245" y="1000" width="150" height="35">
+						<actions>
+							<action target="none">navigate</action>
+						</actions>
+					</button>
+					<button z_index="4" background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="10" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="WiQ" isee:tooltip="Springe zum Modul WiQ." x="395" y="1000" width="150" height="35">
+						<actions>
+							<action target="none">navigate</action>
+						</actions>
+					</button>
+					<button z_index="4" background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="10" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="Zeit" isee:tooltip="Springe zum Modul Zeit." x="545" y="1000" width="150" height="35">
+						<actions>
+							<action target="none">navigate</action>
+						</actions>
+					</button>
+					<button z_index="4" background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="10" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="Mitwirkende" isee:tooltip="Springe zum Modul Mitwirkende." x="695" y="1000" width="150" height="35">
+						<actions>
+							<action target="none">navigate</action>
+						</actions>
+					</button>
+					<button z_index="4" background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="10" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="Zusammenarbeit" isee:tooltip="Springe zum Modul Zusammenarbeit." x="845" y="1000" width="150" height="35">
+						<actions>
+							<action target="none">navigate</action>
+						</actions>
+					</button>
+					<button z_index="4" background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="10" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="Lösungsteams" isee:tooltip="Springe zum Modul Lösungsteams." x="995" y="1000" width="150" height="35">
+						<actions>
+							<action target="none">navigate</action>
+						</actions>
+					</button>
+					<button z_index="4" background="#333393" font_weight="bold" font_color="#FFFF61" font_size="14pt" border_color="white" border_width="thick" corner_radius="10" isee:flat="true" isee:highlight_on_hover="true" isee:highlight_color="#2A6438" label="Motivation" isee:tooltip="Springe zum Modul Motivation." x="1145" y="1000" width="150" height="35">
+						<actions>
+							<action target="none">navigate</action>
+						</actions>
+					</button>
+				</view>
+			</isee:templates>
+			<isee:stories>
+				<isee:story uid="198" name="Bestandteile des Modells">
+					<view isee:template_view="template:7" isee:name="Bestandteile des Modells - Übersicht" background="white" page_width="1920" page_height="1080" zoom="120" isee:thumbnail="r../Design-mp-base-plain_thumbnails/Bestandteile_des_Modells_page1.png" type="interface">
+						<style>
+							<isee:stacked_container item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+						</style>
+						<isee:model_view x="0" y="0" width="1920" height="1080" isee:locked="true" zoom="1.2" center_x="1800" center_y="1200" locked_view="true" transparent="true" use_visible_list="true" show_ltm_table="false" include_equation="true" include_documentation="true" outline_only="true" include_units="true">
+							<model name="Top-Level"/>
+							<isee:visible_list/>
+							<isee:highlight_list/>
+						</isee:model_view>
+						<text_box font_color="#353535" font_size="18pt" padding="6" vertical_scrollbar="true" appearance="transparent" x="95" y="269" width="545" height="692">Description</text_box>
+						<text_box z_index="7" font_size="72pt" padding="0" appearance="transparent" x="95" y="30" width="1635" height="85">Title</text_box>
+						<text_box z_index="7" font_size="36pt" padding="0" appearance="transparent" x="95" y="115" width="1635" height="74">Subtitle</text_box>
+						<text_box text_align="center" vertical_text_align="center" font_color="#333393" font_size="24pt" appearance="transparent" x="95" y="189" width="545" height="80">Caption</text_box>
+					</view>
+				</isee:story>
+			</isee:stories>
+		</views>
+	</model>
+</xmile>
+
