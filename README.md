@@ -42,6 +42,7 @@ _computer modern_ fonts can be found at:
 - https://www.fontsquirrel.com/fonts/computer-modern
 - https://www.checkmyworking.com/cm-web-fonts/
 - https://fontlibrary.org/en/font/cmu-concrete#CMU%20Concrete-Roman
+- https://sourceforge.net/projects/cm-unicode/
 
 
 
